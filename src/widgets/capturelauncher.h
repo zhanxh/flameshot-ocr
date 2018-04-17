@@ -17,26 +17,30 @@
 
 #pragma once
 
-#include <QtDBus/QDBusAbstractAdaptor>
-#include "src/core/controller.h"
+#include <QWidget>
 
-class FlameshotDBusAdapter : public QDBusAbstractAdaptor {
+class QCheckBox;
+class QPushButton;
+class QVBoxLayout;
+class QComboBox;
+class QSpinBox;
+
+class CaptureLauncher : public QWidget
+{
     Q_OBJECT
-    Q_CLASSINFO("D-Bus Interface", "org.dharkael.Flameshot")
-
 public:
-    FlameshotDBusAdapter(QObject *parent = nullptr);
-    virtual ~FlameshotDBusAdapter();
+    explicit CaptureLauncher(QWidget *parent = nullptr);
 
-signals:
-    void captureTaken(uint id, QByteArray rawImage);
-    void captureFailed(uint id);
+private slots:
+    void prepareCapture();
 
-public slots:
-    Q_NOREPLY void graphicCapture(QString path, int delay, uint id);
-    Q_NOREPLY void fullScreen(QString path, bool toClipboard, int delay, uint id);
-    Q_NOREPLY void openLauncher();
-    Q_NOREPLY void openConfig();
-    Q_NOREPLY void trayIconEnabled(bool enabled);
-    Q_NOREPLY void autostartEnabled(bool enabled);
+private:
+    void startCapture();
+
+    QSpinBox *m_delaySpinBox;
+    QComboBox *m_captureType;
+    QVBoxLayout *m_mainLayout;
+    QPushButton *m_launchButton;
+
+    int m_captureDelay;
 };

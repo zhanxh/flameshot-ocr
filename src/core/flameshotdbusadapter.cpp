@@ -73,6 +73,10 @@ void FlameshotDBusAdapter::fullScreen(
     doLater(delay, this, f);
 }
 
+void FlameshotDBusAdapter::openLauncher() {
+    Controller::getInstance()->openLauncherWindow();
+}
+
 void FlameshotDBusAdapter::openConfig() {
     Controller::getInstance()->openConfigWindow();
 }
