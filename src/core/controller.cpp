@@ -27,6 +27,8 @@
 #include <QSystemTrayIcon>
 #include <QAction>
 #include <QMenu>
+#include <QDrag>
+#include <QMimeData>
 
 #ifdef Q_OS_WIN
 #include "src/core/globalshortcutfilter.h"

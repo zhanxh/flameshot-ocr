@@ -24,6 +24,8 @@ class QPushButton;
 class QVBoxLayout;
 class QComboBox;
 class QSpinBox;
+class QLabel;
+class ImageLabel;
 
 class CaptureLauncher : public QWidget
 {
@@ -32,15 +34,17 @@ public:
     explicit CaptureLauncher(QWidget *parent = nullptr);
 
 private slots:
-    void prepareCapture();
+    void startCapture();
+    void startDrag();
 
 private:
-    void startCapture();
 
     QSpinBox *m_delaySpinBox;
     QComboBox *m_captureType;
     QVBoxLayout *m_mainLayout;
     QPushButton *m_launchButton;
+    QLabel *m_CaptureModeLabel;
+    ImageLabel *m_imageLabel;
 
     int m_captureDelay;
 };

@@ -19,13 +19,17 @@
 #include "src/core/controller.h"
 #include "src/widgets/imagelabel.h"
 #include "src/widgets/notificationwidget.h"
+#include "src/utils/screengrabber.h"
 #include <QCheckBox>
 #include <QPushButton>
-#include <QHBoxLayout>
+#include <QGridLayout>
 #include <QVBoxLayout>
 #include <QSpinBox>
 #include <QLabel>
 #include <QComboBox>
+#include <QMimeData>
+#include <QDrag>
+#include <QFormLayout>
 
 // https://github.com/KDE/spectacle/blob/941c1a517be82bed25d1254ebd735c29b0d2951c/src/Gui/KSWidget.cpp
 // https://github.com/KDE/spectacle/blob/941c1a517be82bed25d1254ebd735c29b0d2951c/src/Gui/KSMainWindow.cpp
@@ -35,14 +39,20 @@ CaptureLauncher::CaptureLauncher(QWidget *parent) :
 {
     setAttribute(Qt::WA_DeleteOnClose);
 
-    mCaptureModeLabel = new QLabel(i18n("<b>Capture Mode</b>"), this);
 
-    m_mainLayout = new QVBoxLayout(this);
+    QGridLayout *layout = new QGridLayout(this);
+    m_imageLabel = new ImageLabel();
+    bool ok;
+    m_imageLabel->setScreenshot(ScreenGrabber().grabEntireDesktop(ok));
+    if (!ok) {
 
-    m_launchButton = new QPushButton(this);
-    m_launchButton->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
-    connect(m_launchButton, &QPushButton::pressed,
-            this, &CaptureLauncher::prepareCapture);
+    }
+    m_imageLabel->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    connect(m_imageLabel, &ImageLabel::dragInitiated, this, &CaptureLauncher::startDrag);
+
+    layout->addWidget(m_imageLabel, 0, 0);
+
+    m_CaptureModeLabel = new QLabel(tr("<b>Capture Mode</b>"));
 
     m_captureType = new QComboBox();
     m_captureType->setMinimumWidth(240);
@@ -51,20 +61,60 @@ CaptureLauncher::CaptureLauncher(QWidget *parent) :
     m_captureType->insertItem(5, tr("Rectangular Region"));
 
     m_delaySpinBox = new QSpinBox();
-    m_delaySpinBox->setDecimals(1);
     m_delaySpinBox->setSingleStep(1.0);
     m_delaySpinBox->setMinimum(0.0);
-    m_delaySpinBox->setMaximum(999.9);
+    m_delaySpinBox->setMaximum(999.0);
     m_delaySpinBox->setSpecialValueText(tr("No Delay"));
     m_delaySpinBox->setMinimumWidth(160);
-}
+    // with QT 5.7 qOverload<int>(&QSpinBox::valueChanged),
+    connect(m_delaySpinBox,
+            static_cast<void (QSpinBox::*)(int)>(&QSpinBox::valueChanged),
+            this, [this](int val)
+    {
+        QString sufix = val == 1 ?tr(" second") : tr(" seconds");
+        this->m_delaySpinBox->setSuffix(sufix);
+    });
 
-void CaptureLauncher::prepareCapture() {
-    hide(); // TODO
+    m_launchButton = new QPushButton(tr("Take new screenshot"));
+    m_launchButton->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+    connect(m_launchButton, &QPushButton::pressed,
+            this, &CaptureLauncher::startCapture);
+
+    QFormLayout *captureModeForm = new QFormLayout;
+    captureModeForm->addRow(tr("Area:"), m_captureType);
+    captureModeForm->addRow(tr("Delay:"), m_delaySpinBox);
+    captureModeForm->setContentsMargins(24, 0, 0, 0);
+
+    m_mainLayout = new QVBoxLayout();
+    m_mainLayout->addStretch(1);
+    m_mainLayout->addWidget(m_CaptureModeLabel);
+    m_mainLayout->addLayout(captureModeForm);
+    m_mainLayout->addStretch(1);
+    m_mainLayout->addWidget(m_launchButton);
+    m_mainLayout->addStretch(1);
+    m_mainLayout->setContentsMargins(10, 0, 0, 10);
+    layout->addLayout(m_mainLayout, 0 ,1);
+    layout->setColumnMinimumWidth(0, 320);
+    layout->setColumnMinimumWidth(1, 320);
+
 }
 
 void CaptureLauncher::startCapture() {
+    hide();
+
     Controller::getInstance()->createVisualCapture();
 
-    //show();
+    show();
+}
+
+void CaptureLauncher::startDrag() {
+    QDrag *dragHandler = new QDrag(this);
+    QMimeData *mimeData = new QMimeData;
+    mimeData->setImageData(m_imageLabel->pixmap());
+    dragHandler->setMimeData(mimeData);
+
+    dragHandler->setPixmap(m_imageLabel->pixmap()
+                           ->scaled(256, 256, Qt::KeepAspectRatioByExpanding,
+                                   Qt::SmoothTransformation));
+    dragHandler->exec();
 }

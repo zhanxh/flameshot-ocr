@@ -25,6 +25,7 @@ class CaptureWidget;
 class ConfigWindow;
 class InfoWindow;
 class QSystemTrayIcon;
+class QMimeData;
 
 ////////////////////////////////////
 // TODO Separate later
