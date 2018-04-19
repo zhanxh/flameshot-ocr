@@ -100,11 +100,11 @@ CaptureLauncher::CaptureLauncher(QWidget *parent) :
 }
 
 void CaptureLauncher::startCapture() {
-    hide();
+    //hide();
 
     Controller::getInstance()->createVisualCapture();
 
-    show();
+    //show();
 }
 
 void CaptureLauncher::startDrag() {

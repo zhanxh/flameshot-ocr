@@ -51,10 +51,13 @@ public:
 signals:
     void captureTaken(uint id, QByteArray p);
     void captureFailed(uint id);
+    void startingCapture();
 
 public slots:
     void createVisualCapture(const uint id = 0,
                              const QString &forcedSavePath = QString());
+    void fullscreenCapture(const uint id = 0,
+                           const QString &forcedSavePath = QString());
 
     void openConfigWindow();
     void openInfoWindow();
