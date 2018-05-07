@@ -35,10 +35,13 @@
 // https://github.com/KDE/spectacle/blob/941c1a517be82bed25d1254ebd735c29b0d2951c/src/Gui/KSMainWindow.cpp
 
 CaptureLauncher::CaptureLauncher(QWidget *parent) :
-    QWidget(parent)
+    QWidget(parent), m_id(0)
 {
     setAttribute(Qt::WA_DeleteOnClose);
-
+    connect(Controller::getInstance(), &Controller::captureTaken,
+            this, &CaptureLauncher::captureTaken);
+    connect(Controller::getInstance(), &Controller::captureFailed,
+            this, &CaptureLauncher::captureFailed);
 
     QGridLayout *layout = new QGridLayout(this);
     m_imageLabel = new ImageLabel();
@@ -48,7 +51,8 @@ CaptureLauncher::CaptureLauncher(QWidget *parent) :
 
     }
     m_imageLabel->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-    connect(m_imageLabel, &ImageLabel::dragInitiated, this, &CaptureLauncher::startDrag);
+    connect(m_imageLabel, &ImageLabel::dragInitiated,
+            this, &CaptureLauncher::startDrag);
 
     layout->addWidget(m_imageLabel, 0, 0);
 
@@ -56,9 +60,8 @@ CaptureLauncher::CaptureLauncher(QWidget *parent) :
 
     m_captureType = new QComboBox();
     m_captureType->setMinimumWidth(240);
-    m_captureType->insertItem(1, tr("Full Screen (All Monitors)")); // add variante end
-    //m_captureType->insertItem(2, tr("Current Screen"), ImageGrabber::CurrentScreen);
-    m_captureType->insertItem(5, tr("Rectangular Region"));
+    m_captureType->insertItem(1, tr("Full Screen (All Monitors)"), CaptureRequest::FULLSCREEN_MODE);
+    m_captureType->insertItem(2, tr("Rectangular Region"), CaptureRequest::GRAPHICAL_MODE);
 
     m_delaySpinBox = new QSpinBox();
     m_delaySpinBox->setSingleStep(1.0);
@@ -99,12 +102,14 @@ CaptureLauncher::CaptureLauncher(QWidget *parent) :
 
 }
 
+// HACK: https://github.com/KDE/spectacle/blob/fa1e780b8bf3df3ac36c410b9ece4ace041f401b/src/Gui/KSMainWindow.cpp#L70
 void CaptureLauncher::startCapture() {
-    //hide();
-
-    Controller::getInstance()->createVisualCapture();
-
-    //show();
+    hide();
+    auto mode = static_cast<CaptureRequest::CaptureMode>(
+                m_captureType->currentData().toInt());
+    CaptureRequest req(mode, 500 + m_delaySpinBox->value() * 1000);
+    m_id = req.id();
+    Controller::getInstance()->requestCapture(req);
 }
 
 void CaptureLauncher::startDrag() {
@@ -117,4 +122,19 @@ void CaptureLauncher::startDrag() {
                            ->scaled(256, 256, Qt::KeepAspectRatioByExpanding,
                                    Qt::SmoothTransformation));
     dragHandler->exec();
+}
+
+void CaptureLauncher::captureTaken(uint id, QPixmap p) {
+    if (id == m_id) {
+        m_id = 0;
+        m_imageLabel->setScreenshot(p);
+        show();
+    }
+}
+
+void CaptureLauncher::captureFailed(uint id) {
+    if (id == m_id) {
+        m_id = 0;
+        show();
+    }
 }

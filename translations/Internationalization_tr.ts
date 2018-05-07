@@ -40,7 +40,7 @@
     <message>
         <location filename="../src/tools/launcher/applauncherwidget.cpp" line="99"/>
         <source>Unable to write in</source>
-        <translation>Yazmak mümkün değil</translation>
+        <translation>Yazma mümkün değil</translation>
     </message>
     <message>
         <location filename="../src/tools/launcher/applauncherwidget.cpp" line="112"/>
@@ -58,7 +58,7 @@
     <message>
         <location filename="../src/tools/arrow/arrowtool.cpp" line="88"/>
         <source>Sets the Arrow as the paint tool</source>
-        <translation>Oku boya aracı olarak ayarlar</translation>
+        <translation>Oku çizim aracı olarak ayarlar</translation>
     </message>
 </context>
 <context>
@@ -71,26 +71,26 @@
     <message>
         <location filename="../src/tools/blur/blurtool.cpp" line="42"/>
         <source>Sets the Blur as the paint tool</source>
-        <translation>Bulnıklığı boya aracı olarak ayarlar</translation>
+        <translation>Bulnıklığı boyama aracı olarak ayarlar</translation>
     </message>
 </context>
 <context>
     <name>CaptureWidget</name>
     <message>
-        <location filename="../src/widgets/capture/capturewidget.cpp" line="97"/>
+        <location filename="../src/widgets/capture/capturewidget.cpp" line="79"/>
         <source>Unable to capture screen</source>
-        <translation>Ekran yakalanamadı</translation>
+        <translation>Ekran resmi alınamadı</translation>
     </message>
     <message>
-        <location filename="../src/widgets/capture/capturewidget.cpp" line="221"/>
+        <location filename="../src/widgets/capture/capturewidget.cpp" line="215"/>
         <source>Select an area with the mouse, or press Esc to exit.
 Press Enter to capture the screen.
 Press Right Click to show the color picker.
 Use the Mouse Wheel to change the thickness of your tool.</source>
         <translation>Fareyle bir alan seçin veya çıkmak için Esc tuşuna basın.
-Ekranı yakalamak için Enter tuşuna basın.
-Renk seçicisini göstermek için sağdaki Basın düğmesine basın.
-Araç boyutunu değiştirmek için Fare tekerleğini kullanın.</translation>
+Ekranresmi almak için Enter tuşuna basın.
+Renk seçicisini göstermek için farenizin sağ butonuna basın.
+Araç boyutunu değiştirmek için fare tekerleğini kullanın.</translation>
     </message>
 </context>
 <context>
@@ -103,7 +103,7 @@ Araç boyutunu değiştirmek için Fare tekerleğini kullanın.</translation>
     <message>
         <location filename="../src/tools/circle/circletool.cpp" line="42"/>
         <source>Sets the Circle as the paint tool</source>
-        <translation>Çemberi boya aracı olarak ayarlar</translation>
+        <translation>Çemberi boyama aracı olarak ayarlar</translation>
     </message>
 </context>
 <context>
@@ -121,7 +121,7 @@ Araç boyutunu değiştirmek için Fare tekerleğini kullanın.</translation>
     <message>
         <location filename="../src/config/configwindow.cpp" line="67"/>
         <source>Filename Editor</source>
-        <translation>Dosyaadı Düzenleyici</translation>
+        <translation>Dosya Adı Düzenleyici</translation>
     </message>
     <message>
         <location filename="../src/config/configwindow.cpp" line="72"/>
@@ -132,17 +132,22 @@ Araç boyutunu değiştirmek için Fare tekerleğini kullanın.</translation>
 <context>
     <name>Controller</name>
     <message>
-        <location filename="../src/core/controller.cpp" line="108"/>
+        <location filename="../src/core/controller.cpp" line="109"/>
+        <source>&amp;Take Screenshot</source>
+        <translation>&amp;Ekran Resmi Al</translation>
+    </message>
+    <message>
+        <location filename="../src/core/controller.cpp" line="114"/>
         <source>&amp;Configuration</source>
         <translation>&amp;Ayarlar</translation>
     </message>
     <message>
-        <location filename="../src/core/controller.cpp" line="111"/>
+        <location filename="../src/core/controller.cpp" line="117"/>
         <source>&amp;Information</source>
         <translation>&amp;Bilgi</translation>
     </message>
     <message>
-        <location filename="../src/core/controller.cpp" line="114"/>
+        <location filename="../src/core/controller.cpp" line="120"/>
         <source>&amp;Quit</source>
         <translation>&amp;Çıkış</translation>
     </message>
@@ -233,15 +238,15 @@ Araç boyutunu değiştirmek için Fare tekerleğini kullanın.</translation>
     <name>FileNameHandler</name>
     <message>
         <source>screenshot</source>
-        <translation type="vanished">Ekran yakala</translation>
+        <translation>Ekran kaydı</translation>
     </message>
 </context>
 <context>
     <name>FlameshotDBusAdapter</name>
     <message>
-        <location filename="../src/core/flameshotdbusadapter.cpp" line="74"/>
+        <location filename="../src/core/flameshotdbusadapter.cpp" line="57"/>
         <source>Unable to capture screen</source>
-        <translation>Ekran yakalanamadı</translation>
+        <translation>Ekran kaydı yapılamadı</translation>
     </message>
 </context>
 <context>
@@ -283,7 +288,7 @@ Araç boyutunu değiştirmek için Fare tekerleğini kullanın.</translation>
     <message>
         <location filename="../src/config/geneneralconf.cpp" line="117"/>
         <source>Are you sure you want to reset the configuration?</source>
-        <translation>Konfigürasyonu sıfırlamak istediğinizden emin misiniz?</translation>
+        <translation>Ayarları sıfırlamak istediğinizden emin misiniz?</translation>
     </message>
     <message>
         <location filename="../src/config/geneneralconf.cpp" line="126"/>
@@ -334,7 +339,7 @@ Araç boyutunu değiştirmek için Fare tekerleğini kullanın.</translation>
     <message>
         <location filename="../src/config/geneneralconf.cpp" line="195"/>
         <source>Launch Flameshot</source>
-        <translation type="unfinished"></translation>
+        <translation>Flameshot&apos;ı başlat</translation>
     </message>
 </context>
 <context>
@@ -413,7 +418,7 @@ Araç boyutunu değiştirmek için Fare tekerleğini kullanın.</translation>
     <message>
         <location filename="../src/widgets/infowindow.cpp" line="53"/>
         <source>Move selection 1px</source>
-        <translation>Move selection 1px</translation>
+        <translation>1px seçimini hareket ettir</translation>
     </message>
     <message>
         <location filename="../src/widgets/infowindow.cpp" line="54"/>
@@ -423,7 +428,7 @@ Araç boyutunu değiştirmek için Fare tekerleğini kullanın.</translation>
     <message>
         <location filename="../src/widgets/infowindow.cpp" line="55"/>
         <source>Quit capture</source>
-        <translation>Yakala&apos;dan çık</translation>
+        <translation>Çıkış</translation>
     </message>
     <message>
         <location filename="../src/widgets/infowindow.cpp" line="56"/>
@@ -491,7 +496,7 @@ Araç boyutunu değiştirmek için Fare tekerleğini kullanın.</translation>
     <message>
         <location filename="../src/tools/line/linetool.cpp" line="50"/>
         <source>Sets the Line as the paint tool</source>
-        <translation>Çizgi boya aracı olarak ayarlar</translation>
+        <translation>Çizgiyi boyama aracı olarak ayarlar</translation>
     </message>
 </context>
 <context>
@@ -504,7 +509,7 @@ Araç boyutunu değiştirmek için Fare tekerleğini kullanın.</translation>
     <message>
         <location filename="../src/tools/marker/markertool.cpp" line="50"/>
         <source>Sets the Marker as the paint tool</source>
-        <translation>İşaretleyiciyi boya aracı olarak ayarlar</translation>
+        <translation>İşaretleyiciyi boyama aracı olarak ayarlar</translation>
     </message>
 </context>
 <context>
@@ -530,7 +535,20 @@ Araç boyutunu değiştirmek için Fare tekerleğini kullanın.</translation>
     <message>
         <location filename="../src/tools/pencil/penciltool.cpp" line="38"/>
         <source>Sets the Pencil as the paint tool</source>
-        <translation>Kurşun Kalemi boya aracı olarak ayarlar</translation>
+        <translation>Kurşun Kalemi çizim aracı olarak ayarlar</translation>
+    </message>
+</context>
+<context>
+    <name>PinTool</name>
+    <message>
+        <location filename="../src/tools/pin/pintool.cpp" line="34"/>
+        <source>Pin Tool</source>
+        <translation>Pin Aracı</translation>
+    </message>
+    <message>
+        <location filename="../src/tools/pin/pintool.cpp" line="42"/>
+        <source>Pin image on the desktop</source>
+        <translation>Masaüstündeki PIN resmi</translation>
     </message>
 </context>
 <context>
@@ -538,41 +556,42 @@ Araç boyutunu değiştirmek için Fare tekerleğini kullanın.</translation>
     <message>
         <location filename="../src/utils/screenshotsaver.cpp" line="75"/>
         <source>Save Error</source>
-        <translation>Hata Kaydet</translation>
+        <translation>Kaydetme Hatası</translation>
     </message>
     <message>
         <location filename="../src/utils/screenshotsaver.cpp" line="46"/>
         <location filename="../src/utils/screenshotsaver.cpp" line="69"/>
         <source>Capture saved as </source>
-        <translation>Yakalanma şu şekilde kaydedildi </translation>
+        <translation>Yakalama farklı kaydedildi </translation>
     </message>
     <message>
         <location filename="../src/utils/screenshotsaver.cpp" line="33"/>
         <source>Capture saved to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Yakalama panoya kaydedildi</translation>
     </message>
     <message>
         <location filename="../src/utils/screenshotsaver.cpp" line="48"/>
         <location filename="../src/utils/screenshotsaver.cpp" line="72"/>
         <source>Error trying to save as </source>
-        <translation>Olarak kaydedilmeye çalışılırken hata oluştu </translation>
+        <translation>Farklı kaydetmeye çalışılırken hata oluştu </translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="71"/>
-        <location filename="../src/main.cpp" line="304"/>
-        <location filename="../src/main.cpp" line="333"/>
+        <location filename="../src/main.cpp" line="302"/>
+        <location filename="../src/main.cpp" line="326"/>
+        <location filename="../src/main.cpp" line="355"/>
         <source>Unable to connect via DBus</source>
         <translation>DBus ile bağlanılamadı</translation>
     </message>
     <message>
         <location filename="../src/tools/launcher/openwithprogram.cpp" line="39"/>
         <source>Error</source>
-        <translation type="unfinished">Hata</translation>
+        <translation>Hata</translation>
     </message>
     <message>
         <location filename="../src/tools/launcher/openwithprogram.cpp" line="40"/>
         <source>Unable to write in</source>
-        <translation type="unfinished">Yazmak mümkün değil</translation>
+        <translation>Yazma mümkün değil</translation>
     </message>
 </context>
 <context>
@@ -585,7 +604,7 @@ Araç boyutunu değiştirmek için Fare tekerleğini kullanın.</translation>
     <message>
         <location filename="../src/tools/rectangle/rectangletool.cpp" line="42"/>
         <source>Sets the Rectangle as the paint tool</source>
-        <translation>Dikdörtgeni boya aracı olarak ayarlar</translation>
+        <translation>Dikdörtgeni boyama aracı olarak ayarlar</translation>
     </message>
 </context>
 <context>
@@ -593,7 +612,7 @@ Araç boyutunu değiştirmek için Fare tekerleğini kullanın.</translation>
     <message>
         <location filename="../src/tools/redo/redotool.cpp" line="34"/>
         <source>Redo</source>
-        <translation type="unfinished"></translation>
+        <translation>Yeniden</translation>
     </message>
 </context>
 <context>
@@ -619,7 +638,7 @@ Araç boyutunu değiştirmek için Fare tekerleğini kullanın.</translation>
     <message>
         <location filename="../src/tools/selection/selectiontool.cpp" line="46"/>
         <source>Sets the Selection as the paint tool</source>
-        <translation>Seçimi boya aracı olarak ayarlar</translation>
+        <translation>Seçimi boyama aracı olarak ayarlar</translation>
     </message>
 </context>
 <context>
@@ -744,6 +763,14 @@ Araç boyutunu değiştirmek için Fare tekerleğini kullanın.</translation>
     </message>
 </context>
 <context>
+    <name>SystemNotification</name>
+    <message>
+        <location filename="../src/utils/systemnotification.cpp" line="28"/>
+        <source>Flameshot Info</source>
+        <translation>Flameshot Hakkında</translation>
+    </message>
+</context>
+<context>
     <name>UIcolorEditor</name>
     <message>
         <location filename="../src/config/uicoloreditor.cpp" line="30"/>
@@ -758,7 +785,7 @@ Araç boyutunu değiştirmek için Fare tekerleğini kullanın.</translation>
     <message>
         <location filename="../src/config/uicoloreditor.cpp" line="103"/>
         <source>Select a Button to modify it</source>
-        <translation>Değiştirmek için bir Düğme seçin</translation>
+        <translation>Değiştirmek için bir buton seçin</translation>
     </message>
     <message>
         <location filename="../src/config/uicoloreditor.cpp" line="112"/>
@@ -768,7 +795,7 @@ Araç boyutunu değiştirmek için Fare tekerleğini kullanın.</translation>
     <message>
         <location filename="../src/config/uicoloreditor.cpp" line="116"/>
         <source>Click on this button to set the edition mode of the main color.</source>
-        <translation>Ana rengin baskı modunu ayarlamak için bu düğmeyi tıklayın.</translation>
+        <translation>Ana rengin baskı modunu ayarlamak için bu butonu tıklayın.</translation>
     </message>
     <message>
         <location filename="../src/config/uicoloreditor.cpp" line="127"/>
@@ -778,7 +805,7 @@ Araç boyutunu değiştirmek için Fare tekerleğini kullanın.</translation>
     <message>
         <location filename="../src/config/uicoloreditor.cpp" line="132"/>
         <source>Click on this button to set the edition mode of the contrast color.</source>
-        <translation>Kontrast renginin baskı modunu ayarlamak için bu düğmeyi tıklayın.</translation>
+        <translation>Kontrast renginin baskı modunu ayarlamak için bu butonu tıklayın.</translation>
     </message>
 </context>
 <context>
@@ -799,12 +826,12 @@ Araç boyutunu değiştirmek için Fare tekerleğini kullanın.</translation>
     <message>
         <location filename="../src/config/visualseditor.cpp" line="53"/>
         <source>Opacity of area outside selection:</source>
-        <translation>Seçim dışı alanın opaklığı:</translation>
+        <translation>Seçimin dışındaki alanın opaklığı:</translation>
     </message>
     <message>
         <location filename="../src/config/visualseditor.cpp" line="77"/>
         <source>Button Selection</source>
-        <translation>Düğme Seçimi</translation>
+        <translation>Buton Seçimi</translation>
     </message>
     <message>
         <location filename="../src/config/visualseditor.cpp" line="83"/>

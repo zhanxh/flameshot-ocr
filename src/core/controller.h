@@ -17,27 +17,20 @@
 
 #pragma once
 
+#include "src/core/capturerequest.h"
 #include <QObject>
 #include <QPointer>
 #include <QPixmap>
+#include <QMap>
+#include <QTimer>
+#include <functional>
 
 class CaptureWidget;
 class ConfigWindow;
 class InfoWindow;
 class QSystemTrayIcon;
-class QMimeData;
-
-////////////////////////////////////
-// TODO Separate later
-#include <QTimer>
-#include <functional>
 
 using lambda = std::function<void(void)>;
-
-// replace QTimer::singleShot introduced in QT 5.4
-// the actual target QT version is QT 5.3
-void doLater(int msec, QObject *receiver, lambda func);
-////////////////////////////////////
 
 class Controller : public QObject {
     Q_OBJECT
@@ -49,20 +42,15 @@ public:
     void operator =(const Controller&) = delete;
 
 signals:
-    void captureTaken(uint id, QByteArray p);
+    void captureTaken(uint id, QPixmap p);
     void captureFailed(uint id);
-    void startingCapture();
 
 public slots:
-    void createVisualCapture(const uint id = 0,
-                             const QString &forcedSavePath = QString());
-    void fullscreenCapture(const uint id = 0,
-                           const QString &forcedSavePath = QString());
+    void requestCapture(const CaptureRequest &request);
 
     void openConfigWindow();
     void openInfoWindow();
     void openLauncherWindow();
-
     void enableTrayIcon();
     void disableTrayIcon();
     void sendTrayNotification(const QString &text,
@@ -72,10 +60,21 @@ public slots:
     void updateConfigComponents();
 
 private slots:
+    void startFullscreenCapture(const uint id = 0);
+    void startVisualCapture(const uint id = 0,
+                             const QString &forcedSavePath = QString());
+
+    void handleCaptureTaken(uint id, QPixmap p);
+    void handleCaptureFailed(uint id);
 
 private:
     Controller();
 
+    // replace QTimer::singleShot introduced in QT 5.4
+    // the actual target QT version is QT 5.3
+    void doLater(int msec, QObject *receiver, lambda func);
+
+    QMap<uint, CaptureRequest> m_requestMap;
     QPointer<CaptureWidget> m_captureWindow;
     QPointer<InfoWindow> m_infoWindow;
     QPointer<ConfigWindow> m_configWindow;

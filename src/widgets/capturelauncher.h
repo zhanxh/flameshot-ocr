@@ -36,6 +36,8 @@ public:
 private slots:
     void startCapture();
     void startDrag();
+    void captureTaken(uint id, QPixmap p);
+    void captureFailed(uint id);
 
 private:
 
@@ -45,6 +47,5 @@ private:
     QPushButton *m_launchButton;
     QLabel *m_CaptureModeLabel;
     ImageLabel *m_imageLabel;
-
-    int m_captureDelay;
+    uint m_id;
 };
