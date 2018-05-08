@@ -7,12 +7,20 @@ _flameshot() {
 
 	prev="${COMP_WORDS[COMP_CWORD-1]}"
 	cur="${COMP_WORDS[COMP_CWORD]}"
-	cmd="gui full config launcher"
+	cmd="gui full config launcher screen"
+	screen_opts="--number --path --delay --raw -p -d -r -n"
 	gui_opts="--path --delay --raw -p -d -r"
 	full_opts="--path --delay --clipboard --raw -p -d -c -r"
 	config_opts="--contrastcolor --filename --maincolor --showhelp --trayicon --autostart -k -f -m -s -t -a"
 
 	case "${prev}" in
+		launcher)
+			return 0
+			;;
+		screen)
+			COMPREPLY=( $(compgen -W "$screen_opts --help -h" -- ${cur}) )
+			return 0
+			;;
 		gui)
 			COMPREPLY=( $(compgen -W "$gui_opts --help -h" -- ${cur}) )
 			return 0
@@ -33,7 +41,7 @@ _flameshot() {
 			COMPREPLY=( $(compgen -W "true false" -- ${cur}) )
 			return 0
 			;;
-		-d|--delay|-h|--help|-c|--clipboard|--version|-v)
+		-d|--delay|-h|--help|-c|--clipboard|--version|-v|--number|-n)
 			return 0
 			;;
 		*)
