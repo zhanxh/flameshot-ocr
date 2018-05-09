@@ -43,8 +43,7 @@ CaptureLauncher::CaptureLauncher(QWidget *parent) :
     connect(Controller::getInstance(), &Controller::captureFailed,
             this, &CaptureLauncher::captureFailed);
 
-    QGridLayout *layout = new QGridLayout(this);
-    m_imageLabel = new ImageLabel();
+    m_imageLabel = new ImageLabel(this);
     bool ok;
     m_imageLabel->setScreenshot(ScreenGrabber().grabEntireDesktop(ok));
     if (!ok) {
@@ -54,14 +53,17 @@ CaptureLauncher::CaptureLauncher(QWidget *parent) :
     connect(m_imageLabel, &ImageLabel::dragInitiated,
             this, &CaptureLauncher::startDrag);
 
+    QGridLayout *layout = new QGridLayout(this);
     layout->addWidget(m_imageLabel, 0, 0);
 
     m_CaptureModeLabel = new QLabel(tr("<b>Capture Mode</b>"));
 
     m_captureType = new QComboBox();
     m_captureType->setMinimumWidth(240);
-    m_captureType->insertItem(1, tr("Full Screen (All Monitors)"), CaptureRequest::FULLSCREEN_MODE);
-    m_captureType->insertItem(2, tr("Rectangular Region"), CaptureRequest::GRAPHICAL_MODE);
+    // TODO remember number
+    m_captureType->insertItem(1, tr("Rectangular Region"), CaptureRequest::GRAPHICAL_MODE);
+    m_captureType->insertItem(2, tr("Full Screen (All Monitors)"), CaptureRequest::FULLSCREEN_MODE);
+    m_captureType->insertItem(3, tr("Single Screen"), CaptureRequest::SCREEN_MODE);
 
     m_delaySpinBox = new QSpinBox();
     m_delaySpinBox->setSingleStep(1.0);
@@ -82,6 +84,7 @@ CaptureLauncher::CaptureLauncher(QWidget *parent) :
     m_launchButton->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
     connect(m_launchButton, &QPushButton::pressed,
             this, &CaptureLauncher::startCapture);
+    m_launchButton->setFocus();
 
     QFormLayout *captureModeForm = new QFormLayout;
     captureModeForm->addRow(tr("Area:"), m_captureType);
@@ -92,9 +95,8 @@ CaptureLauncher::CaptureLauncher(QWidget *parent) :
     m_mainLayout->addStretch(1);
     m_mainLayout->addWidget(m_CaptureModeLabel);
     m_mainLayout->addLayout(captureModeForm);
-    m_mainLayout->addStretch(1);
-    m_mainLayout->addWidget(m_launchButton);
-    m_mainLayout->addStretch(1);
+    m_mainLayout->addStretch(10);
+    m_mainLayout->addWidget(m_launchButton, 1 , Qt::AlignCenter);
     m_mainLayout->setContentsMargins(10, 0, 0, 10);
     layout->addLayout(m_mainLayout, 0 ,1);
     layout->setColumnMinimumWidth(0, 320);
