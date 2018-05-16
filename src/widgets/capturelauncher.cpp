@@ -109,7 +109,7 @@ void CaptureLauncher::startCapture() {
     hide();
     auto mode = static_cast<CaptureRequest::CaptureMode>(
                 m_captureType->currentData().toInt());
-    CaptureRequest req(mode, 500 + m_delaySpinBox->value() * 1000);
+    CaptureRequest req(mode, 600 + m_delaySpinBox->value() * 1000);
     m_id = req.id();
     Controller::getInstance()->requestCapture(req);
 }

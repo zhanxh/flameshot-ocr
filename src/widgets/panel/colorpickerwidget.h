@@ -15,43 +15,50 @@
 //     You should have received a copy of the GNU General Public License
 //     along with Flameshot.  If not, see <http://www.gnu.org/licenses/>.
 
-// Based on Lightscreen areadialog.h, Copyright 2017  Christian Kaiser <info@ckaiser.com.ar>
-// released under the GNU GPL2  <https://www.gnu.org/licenses/gpl-2.0.txt>
-
-// Based on KDE's KSnapshot regiongrabber.cpp, revision 796531, Copyright 2007 Luca Gugelmann <lucag@student.ethz.ch>
-// released under the GNU LGPL  <http://www.gnu.org/licenses/old-licenses/library.txt>
-
 #pragma once
 
 #include <QWidget>
-#include <QPointer>
+#include "color_wheel.hpp"
 
 class QVBoxLayout;
-class QPropertyAnimation;
-class QScrollArea;
+class QPushButton;
+class QLabel;
+class QColorPickingEventFilter;
 
-class UtilityPanel : public QWidget {
+class ColorPickerWidget : public QWidget {
     Q_OBJECT
-public:
-    explicit UtilityPanel(QWidget *parent = nullptr);
 
-    void addToolWidget(QWidget *w);
-    void pushWidget(QWidget *w);
+    friend class QColorPickingEventFilter;
+public:
+    explicit ColorPickerWidget(QPixmap *p, QWidget *parent = nullptr);
 
 signals:
-    void mouseEnter();
-    void mouseLeave();
+    void colorChanged(const QColor &c);
 
 public slots:
-    void toggle();
+    void updateColor(const QColor &c);
+
+private slots:
+    void updateColorNoWheel(const QColor &c);
+
+private slots:
+    void colorGrabberActivated();
+    void releaseColorGrab();
 
 private:
-    void initInternalPanel();
+    QColor grabPixmapColor(const QPoint &p);
 
-    QPointer<QWidget> m_toolWidget;
-    QScrollArea *m_internalPanel;
-    QVBoxLayout *m_upLayout;
+    bool handleKeyPress(QKeyEvent *e);
+    bool handleMouseButtonPressed(QMouseEvent *e);
+    bool handleMouseMove(QMouseEvent *e);
+
     QVBoxLayout *m_layout;
-    QPropertyAnimation *m_showAnimation;
-    QPropertyAnimation *m_hideAnimation;
+    QPushButton *m_colorGrabButton;
+    color_widgets::ColorWheel *m_colorWheel;
+    QLabel *m_colorLabel;
+    QPixmap *m_pixmap;
+    QColor m_colorBackup;
+    QColor m_color;
+    QColorPickingEventFilter *m_eventFilter;
+
 };
