@@ -33,6 +33,7 @@
         <file>img/material/black/circle-outline.svg</file>
         <file>img/material/black/pixelate.svg</file>
         <file>img/material/black/arrow-bottom-left.svg</file>
+        <file>img/material/black/content-ocr.svg</file>
         <file>img/material/white/undo-variant.svg</file>
         <file>img/material/white/text.svg</file>
         <file>img/material/white/square.svg</file>
@@ -66,5 +67,6 @@
         <file>img/material/white/arrow-bottom-left.svg</file>
         <file>img/material/black/circlecount-outline.svg</file>
         <file>img/material/white/circlecount-outline.svg</file>
+        <file>img/material/white/content-ocr.svg</file>
     </qresource>
 </RCC>

@@ -49,6 +49,12 @@ ScreenshotSaver::saveToClipboard(const QPixmap& capture)
   }
 }
 
+void ScreenshotSaver::saveToClipboard(const char* capture)
+{
+    QString data(capture);
+    QApplication::clipboard()->setText(data);
+}
+
 bool
 ScreenshotSaver::saveToFilesystem(const QPixmap& capture,
                                   const QString& path,

@@ -36,6 +36,7 @@
 #include "sizeindicator/sizeindicatortool.h"
 #include "text/texttool.h"
 #include "undo/undotool.h"
+#include "ocr/ocrtool.h"
 
 ToolFactory::ToolFactory(QObject* parent)
   : QObject(parent)
@@ -106,7 +107,9 @@ ToolFactory::CreateTool(CaptureToolButton::ButtonType t, QObject* parent)
     case CaptureToolButton::TYPE_CIRCLECOUNT:
       tool = new CircleCountTool(parent);
       break;
-
+    case CaptureToolButton::TYPE_OCR:
+      tool = new OcrTool(parent);
+      break;
     default:
       tool = nullptr;
       break;

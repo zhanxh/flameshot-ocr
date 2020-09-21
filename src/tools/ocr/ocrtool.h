@@ -17,19 +17,31 @@
 
 #pragma once
 
-class QPixmap;
-class QString;
+#include "baidu/ocr.h"
+#include "src/tools/abstractactiontool.h"
 
-class ScreenshotSaver
+class OcrTool : public AbstractActionTool
 {
+  Q_OBJECT
 public:
-  ScreenshotSaver();
+  explicit OcrTool(QObject* parent = nullptr);
 
-  void saveToClipboard(const QPixmap& capture);
-  void saveToClipboard(const char* capture);
-  bool saveToFilesystem(const QPixmap& capture,
-                        const QString& path,
-                        const QString& messagePrefix);
-  bool saveToFilesystemGUI(const QPixmap& capture);
-  
+  bool closeOnButtonPressed() const;
+
+  QIcon icon(const QColor& background, bool inEditor) const override;
+  QString name() const override;
+  QString description() const override;
+
+  CaptureTool* copy(QObject* parent = nullptr) override;
+
+protected:
+  ToolType nameID() const override;
+
+private:
+    void CreateOcr(); 
+    void DoOcr(const QByteArray data); 
+    static aip::Ocr* baiduOcr;
+
+public slots:
+  void pressed(const CaptureContext& context) override;
 };

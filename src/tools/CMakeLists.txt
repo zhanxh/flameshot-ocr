@@ -45,7 +45,18 @@ target_sources(
           text/texttool.cpp
           text/textwidget.cpp)
 target_sources(flameshot PRIVATE undo/undotool.h undo/undotool.cpp)
-
+target_sources(
+  flameshot 
+  PRIVATE
+        ocr/baidu/base/base.h   
+        ocr/baidu/base/base64.h
+        ocr/baidu/base/base64.cpp
+        ocr/baidu/base/http.h
+        ocr/baidu/base/utils.h
+        ocr/baidu/base/utils.cpp
+        ocr/baidu/ocr.h
+        ocr/ocrtool.h 
+        ocr/ocrtool.cpp)
 target_sources(
   flameshot
   PRIVATE abstractactiontool.cpp

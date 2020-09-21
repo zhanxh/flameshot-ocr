@@ -1,6 +1,9 @@
 cmake_minimum_required(VERSION 3.13)
 # cmake_policy(SET CMP0076 OLD)
 
+add_definitions(-std=c++11)
+set( CMAKE_CXX_FLAGS "-std=c++11" )
+
 # This can be read from ${PROJECT_NAME} after project() is called
 project(
   flameshot

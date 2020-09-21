@@ -10,6 +10,8 @@ find_package(
   DBus
   LinguistTools)
 
+add_definitions(-std=c++11)
+  
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
@@ -102,6 +104,9 @@ target_include_directories(
          $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/tools/sizeindicator>
          $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/tools/text>
          $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/tools/undo>
+         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/tools/ocr>
+         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/tools/ocr/baidu>
+         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/tools/ocr/baidu/base>
          $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/utils>
          $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/widgets>
          $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/widgets/panel>
@@ -112,6 +117,9 @@ target_link_libraries(
   flameshot
   project_warnings
   project_options
+  jsoncpp
+  curl
+  crypto
   Qt5::Svg
   Qt5::DBus
   Qt5::Network
