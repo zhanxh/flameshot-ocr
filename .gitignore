@@ -59,3 +59,9 @@ data/flatpak/.flatpak-builder
 .idea/
 
 # End of https://www.gitignore.io/api/snapcraft
+
+.clangd/
+.ccls-cache/
+.clang-format
+.clang-tidy
+CMakeFiles/

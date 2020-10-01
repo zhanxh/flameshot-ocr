@@ -25,7 +25,7 @@ aip::Ocr* OcrTool::baiduOcr = nullptr;
 OcrTool::OcrTool(QObject* parent)
   : AbstractActionTool(parent)
 {
-    CreateOcr();
+  CreateOcr();
 }
 
 bool
@@ -73,59 +73,47 @@ OcrTool::pressed(const CaptureContext& context)
   QBuffer buffer(&ba);
   buffer.open(QIODevice::WriteOnly);
   bmp.save(&buffer, "bmp", 0);
-  //std::cout<<"QByteArray Len" << ba.length() << "\r\n BufferSize: " <<buffer.size() << std::endl;
-  //QString data = QString(ba);
   DoOcr(ba);
-  
-//   if (context.savePath.isEmpty()) {
-//     emit requestAction(REQ_HIDE_GUI);
-//     bool ok =
-//       ScreenshotSaver().saveToFilesystemGUI(context.selectedScreenshotArea());
-//     if (ok) {
-//       emit requestAction(REQ_CAPTURE_DONE_OK);
-//     }
-//   } else {
-//     bool ok = ScreenshotSaver().saveToFilesystem(
-//       context.selectedScreenshotArea(), context.savePath, "");
-//     if (ok) {
-//       emit requestAction(REQ_CAPTURE_DONE_OK);
-//     }
-//   }
 }
 
-void OcrTool::CreateOcr()
+void
+OcrTool::CreateOcr()
 {
-    if(nullptr == baiduOcr){
-        std::ifstream ifs("ocr.json");
-        Json::Value root;
-        Json::CharReaderBuilder builder;
-        builder["collectComments"] = true;
-        JSONCPP_STRING errs;
-        if (!parseFromStream(builder, ifs, &root, &errs)) {
-            std::cout << errs << std::endl;
-            return;
-        }
-        std::cout << root << std::endl;
-        Json::Value baiduCfg = root["baidu"];
-        std::string app_id = baiduCfg["app_id"].asString();
-        std::string api_key = baiduCfg["api_key"].asString();
-        std::string secret_key = baiduCfg["secret_key"].asString();
-
-        baiduOcr = new aip::Ocr(app_id,api_key,secret_key);
+  if (nullptr == baiduOcr) {
+    std::ifstream ifs("ocr.json");
+    Json::Value root;
+    Json::CharReaderBuilder builder;
+    builder["collectComments"] = true;
+    JSONCPP_STRING errs;
+    if (!parseFromStream(builder, ifs, &root, &errs)) {
+      std::cout << errs << std::endl;
+      return;
     }
+    std::cout << root << std::endl;
+    Json::Value baiduCfg = root["baidu"];
+    std::string app_id = baiduCfg["app_id"].asString();
+    std::string api_key = baiduCfg["api_key"].asString();
+    std::string secret_key = baiduCfg["secret_key"].asString();
+
+    baiduOcr = new aip::Ocr(app_id, api_key, secret_key);
+  }
 }
-void 
+void
 OcrTool::DoOcr(const QByteArray data)
 {
-     std::string str(data, data.length());
-     Json::Value  result = baiduOcr->general_basic(str, aip::null);
-     Json::String  rst;// = result.asString();
-     Json::Value words = result["words_result"];
-     for ( int index = 0; index < words.size(); ++index )
-     {
-         Json::Value word = words[index];
-         rst.append(word["words"].asString());
-         rst.append("\r\n");
-     }
-     ScreenshotSaver().saveToClipboard(rst.c_str());
+  if (nullptr == baiduOcr) {
+    ScreenshotSaver().saveToClipboard("Ocr Not Inited!");
+  } else {
+    std::string str(data, data.length());
+    Json::Value result = baiduOcr->general_basic(str, aip::null);
+    Json::String rst; // = result.asString();
+    Json::Value words = result["words_result"];
+    for (int index = 0; index < words.size(); ++index) {
+      Json::Value word = words[index];
+      rst.append(word["words"].asString());
+      rst.append("\r\n");
+    }
+    ScreenshotSaver().saveToClipboard(rst.c_str());
+    // baiduOcr->custom(str, 	aip::null);
+  }
 }

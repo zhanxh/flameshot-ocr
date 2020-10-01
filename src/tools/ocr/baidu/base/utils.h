@@ -24,6 +24,7 @@
 #include <algorithm>
 #include <openssl/md5.h>
 #include <map>
+#include <vector>
 
 const int __BCE_VERSION__ = 1;
 const int __BCE_EXPIRE__ = 1800;
