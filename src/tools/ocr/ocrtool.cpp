@@ -19,6 +19,7 @@
 #include "src/utils/screenshotsaver.h"
 #include <QPainter>
 #include <qbuffer.h>
+#include <QCoreApplication>
 
 aip::Ocr* OcrTool::baiduOcr = nullptr;
 
@@ -80,7 +81,11 @@ void
 OcrTool::CreateOcr()
 {
   if (nullptr == baiduOcr) {
-    std::ifstream ifs("ocr.json");
+	QString appdir = QCoreApplication::applicationDirPath();
+	appdir.append("/ocr.json");
+	std::cout << "config path: " << appdir.toStdString() << std::endl;
+	std::ifstream ifs(appdir.toStdString());
+	//std::ifstream ifs("ocr.json");
     Json::Value root;
     Json::CharReaderBuilder builder;
     builder["collectComments"] = true;
@@ -89,7 +94,7 @@ OcrTool::CreateOcr()
       std::cout << errs << std::endl;
       return;
     }
-    std::cout << root << std::endl;
+    // std::cout << root << std::endl;
     Json::Value baiduCfg = root["baidu"];
     std::string app_id = baiduCfg["app_id"].asString();
     std::string api_key = baiduCfg["api_key"].asString();

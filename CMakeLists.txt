@@ -7,7 +7,7 @@ set( CMAKE_CXX_FLAGS "-std=c++11" )
 # This can be read from ${PROJECT_NAME} after project() is called
 project(
   flameshot
-  VERSION 0.8.0
+  VERSION 0.8.4
   LANGUAGES CXX)
 set(PROJECT_NAME_CAPITALIZED "Flameshot")
 
@@ -15,6 +15,12 @@ set(PROJECT_NAME_CAPITALIZED "Flameshot")
 set(DEFAULT_RUN_IN_PLACE FALSE)
 if(WIN32)
 	set(DEFAULT_RUN_IN_PLACE TRUE)
+    # For Windows RC file.
+    add_definitions(-DFLAMESHOT_VERSION_MAJOR=${CMAKE_PROJECT_VERSION_MAJOR})
+    add_definitions(-DFLAMESHOT_VERSION_MINOR=${CMAKE_PROJECT_VERSION_MINOR})
+    add_definitions(-DFLAMESHOT_VERSION_BUGFIX=${CMAKE_PROJECT_VERSION_PATCH})
+    add_definitions(-DFLAMESHOT_VERSION_BUILD=1)
+    add_definitions(-DFLAMESHOT_VERSION_STRING="${PROJECT_VERSION}")
 endif()
 set(RUN_IN_PLACE ${DEFAULT_RUN_IN_PLACE} CACHE BOOL
 	"Run directly in source directory structure")
@@ -50,7 +56,7 @@ set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "Powerful yet simple to use screenshot sof
 set(CPACK_PACKAGE_VERSION ${PROJECT_VERSION})
 set(CPACK_PACKAGE_HOMEPAGE_URL "https://flameshot.org")
 set(CPACK_PACKAGE_CONTACT "flameshot-org developers <info@flameshot.org>")
-set(CPACK_PACKAGE_ICON "${CMAKE_SOURCE_DIR}/data/img/app/flameshot.svg") # TODO: Can any generator make use of this?
+set(CPACK_PACKAGE_ICON "${CMAKE_SOURCE_DIR}/data/img/app/org.flameshot.Flameshot.svg") # TODO: Can any generator make use of this?
 set(CPACK_PACKAGE_DESCRIPTION_FILE "${CMAKE_SOURCE_DIR}/README.md") # TODO: Where is this used? Do we need a better source?
 
 if(WIN32)

@@ -23,13 +23,13 @@ class QString;
 class ScreenshotSaver
 {
 public:
-  ScreenshotSaver();
+    ScreenshotSaver();
 
-  void saveToClipboard(const QPixmap& capture);
-  void saveToClipboard(const char* capture);
-  bool saveToFilesystem(const QPixmap& capture,
-                        const QString& path,
-                        const QString& messagePrefix);
-  bool saveToFilesystemGUI(const QPixmap& capture);
+    void saveToClipboard(const QPixmap& capture);
+    void saveToClipboard(const char* capture);
+    bool saveToFilesystem(const QPixmap& capture,
+                          const QString& path,
+                          const QString& messagePrefix);
+    bool saveToFilesystemGUI(const QPixmap& capture);
   
 };

@@ -75,60 +75,60 @@
 <context>
     <name>CaptureLauncher</name>
     <message>
-        <location filename="../../src/widgets/capturelauncher.cpp" line="65"/>
+        <location filename="../../src/widgets/capturelauncher.cpp" line="67"/>
         <source>&lt;b&gt;Capture Mode&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/widgets/capturelauncher.cpp" line="71"/>
-        <source>Rectangular Region</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Režim zachytávání&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../../src/widgets/capturelauncher.cpp" line="73"/>
+        <source>Rectangular Region</source>
+        <translation>Pravouhlá oblast</translation>
+    </message>
+    <message>
+        <location filename="../../src/widgets/capturelauncher.cpp" line="75"/>
         <source>Full Screen (All Monitors)</source>
-        <translation type="unfinished"></translation>
+        <translation>Celá obrazovka (všechny monitory)</translation>
     </message>
     <message>
-        <location filename="../../src/widgets/capturelauncher.cpp" line="81"/>
+        <location filename="../../src/widgets/capturelauncher.cpp" line="83"/>
         <source>No Delay</source>
-        <translation type="unfinished"></translation>
+        <translation>Bez zpoždění</translation>
     </message>
     <message>
-        <location filename="../../src/widgets/capturelauncher.cpp" line="88"/>
+        <location filename="../../src/widgets/capturelauncher.cpp" line="90"/>
         <source> second</source>
-        <translation type="unfinished"></translation>
+        <translation> sekunda</translation>
     </message>
     <message>
-        <location filename="../../src/widgets/capturelauncher.cpp" line="88"/>
+        <location filename="../../src/widgets/capturelauncher.cpp" line="90"/>
         <source> seconds</source>
-        <translation type="unfinished"></translation>
+        <translation> sekund</translation>
     </message>
     <message>
-        <location filename="../../src/widgets/capturelauncher.cpp" line="92"/>
+        <location filename="../../src/widgets/capturelauncher.cpp" line="94"/>
         <source>Take new screenshot</source>
-        <translation type="unfinished"></translation>
+        <translation>Zachytit nový snímek</translation>
     </message>
     <message>
-        <location filename="../../src/widgets/capturelauncher.cpp" line="101"/>
+        <location filename="../../src/widgets/capturelauncher.cpp" line="103"/>
         <source>Area:</source>
-        <translation type="unfinished"></translation>
+        <translation>Oblast:</translation>
     </message>
     <message>
-        <location filename="../../src/widgets/capturelauncher.cpp" line="102"/>
+        <location filename="../../src/widgets/capturelauncher.cpp" line="104"/>
         <source>Delay:</source>
-        <translation type="unfinished"></translation>
+        <translation>Zpoždění:</translation>
     </message>
 </context>
 <context>
     <name>CaptureWidget</name>
     <message>
-        <location filename="../../src/widgets/capture/capturewidget.cpp" line="97"/>
+        <location filename="../../src/widgets/capture/capturewidget.cpp" line="99"/>
         <source>Unable to capture screen</source>
         <translation>Nelze zachytit obrazovku</translation>
     </message>
     <message>
-        <location filename="../../src/widgets/capture/capturewidget.cpp" line="257"/>
+        <location filename="../../src/widgets/capture/capturewidget.cpp" line="260"/>
         <source>Select an area with the mouse, or press Esc to exit.
 Press Enter to capture the screen.
 Press Right Click to show the color picker.
@@ -140,18 +140,23 @@ Stiskněte pravé tlačítko myši pro zobrazení voliče barev.
 Použijte kolečko myši pro změnu tloušťky nástroje.
 Stiskněte mezerník pro otevření postranního panelu.</translation>
     </message>
+    <message>
+        <location filename="../../src/widgets/capture/capturewidget.cpp" line="617"/>
+        <source>Tool Settings</source>
+        <translation>Nastavení nástrojů</translation>
+    </message>
 </context>
 <context>
     <name>CircleCountTool</name>
     <message>
         <location filename="../../src/tools/circlecount/circlecounttool.cpp" line="39"/>
         <source>Circle Counter</source>
-        <translation type="unfinished"></translation>
+        <translation>Kruhové počítadlo</translation>
     </message>
     <message>
         <location filename="../../src/tools/circlecount/circlecounttool.cpp" line="51"/>
         <source>Add an autoincrementing counter bubble</source>
-        <translation type="unfinished"></translation>
+        <translation>Přidá bublinu s číslem (vždy zvýšeným o jednotku)</translation>
     </message>
 </context>
 <context>
@@ -193,31 +198,31 @@ Stiskněte mezerník pro otevření postranního panelu.</translation>
 <context>
     <name>Controller</name>
     <message>
-        <location filename="../../src/core/controller.cpp" line="202"/>
+        <location filename="../../src/core/controller.cpp" line="204"/>
         <source>&amp;Take Screenshot</source>
         <translation>&amp;Zachytit obrazovku</translation>
     </message>
     <message>
-        <location filename="../../src/core/controller.cpp" line="207"/>
+        <location filename="../../src/core/controller.cpp" line="209"/>
         <source>&amp;Open Launcher</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Otevřít spouštěč</translation>
     </message>
     <message>
-        <location filename="../../src/core/controller.cpp" line="210"/>
+        <location filename="../../src/core/controller.cpp" line="212"/>
         <source>&amp;Configuration</source>
         <translation>&amp;Nastavení</translation>
     </message>
     <message>
-        <location filename="../../src/core/controller.cpp" line="213"/>
+        <location filename="../../src/core/controller.cpp" line="215"/>
         <source>&amp;About</source>
-        <translation type="unfinished"></translation>
+        <translation>O &amp;programu</translation>
     </message>
     <message>
         <source>&amp;Information</source>
         <translation type="vanished">&amp;Informace</translation>
     </message>
     <message>
-        <location filename="../../src/core/controller.cpp" line="215"/>
+        <location filename="../../src/core/controller.cpp" line="217"/>
         <source>&amp;Quit</source>
         <translation>&amp;Ukončit</translation>
     </message>
@@ -307,114 +312,155 @@ Stiskněte mezerník pro otevření postranního panelu.</translation>
 <context>
     <name>GeneneralConf</name>
     <message>
-        <location filename="../../src/config/geneneralconf.cpp" line="102"/>
-        <location filename="../../src/config/geneneralconf.cpp" line="225"/>
+        <location filename="../../src/config/geneneralconf.cpp" line="121"/>
+        <location filename="../../src/config/geneneralconf.cpp" line="258"/>
         <source>Import</source>
         <translation>Zavést</translation>
     </message>
     <message>
-        <location filename="../../src/config/geneneralconf.cpp" line="109"/>
-        <location filename="../../src/config/geneneralconf.cpp" line="117"/>
-        <location filename="../../src/config/geneneralconf.cpp" line="141"/>
+        <location filename="../../src/config/geneneralconf.cpp" line="128"/>
+        <location filename="../../src/config/geneneralconf.cpp" line="136"/>
+        <location filename="../../src/config/geneneralconf.cpp" line="160"/>
+        <location filename="../../src/config/geneneralconf.cpp" line="370"/>
         <source>Error</source>
         <translation>Chyba</translation>
     </message>
     <message>
-        <location filename="../../src/config/geneneralconf.cpp" line="109"/>
+        <location filename="../../src/config/geneneralconf.cpp" line="128"/>
         <source>Unable to read file.</source>
         <translation>Nelze přečíst soubor.</translation>
     </message>
     <message>
-        <location filename="../../src/config/geneneralconf.cpp" line="117"/>
-        <location filename="../../src/config/geneneralconf.cpp" line="141"/>
+        <location filename="../../src/config/geneneralconf.cpp" line="136"/>
+        <location filename="../../src/config/geneneralconf.cpp" line="160"/>
         <source>Unable to write file.</source>
         <translation>Nelze zapsat soubor.</translation>
     </message>
     <message>
-        <location filename="../../src/config/geneneralconf.cpp" line="128"/>
+        <location filename="../../src/config/geneneralconf.cpp" line="147"/>
         <source>Save File</source>
         <translation>Uložit soubor</translation>
     </message>
     <message>
-        <location filename="../../src/config/geneneralconf.cpp" line="151"/>
+        <location filename="../../src/config/geneneralconf.cpp" line="170"/>
         <source>Confirm Reset</source>
         <translation>Potvrdit vrácení na výchozí</translation>
     </message>
     <message>
-        <location filename="../../src/config/geneneralconf.cpp" line="152"/>
+        <location filename="../../src/config/geneneralconf.cpp" line="171"/>
         <source>Are you sure you want to reset the configuration?</source>
         <translation>Opravdu chcete nastavení vrátit do výchozího stavu?</translation>
     </message>
     <message>
-        <location filename="../../src/config/geneneralconf.cpp" line="162"/>
+        <location filename="../../src/config/geneneralconf.cpp" line="181"/>
         <source>Show help message</source>
         <translation>Ukázat zprávu s nápovědou</translation>
     </message>
     <message>
-        <location filename="../../src/config/geneneralconf.cpp" line="166"/>
+        <location filename="../../src/config/geneneralconf.cpp" line="185"/>
         <source>Show the help message at the beginning in the capture mode.</source>
         <translation>Ukázat zprávu s nápovědou na začátku v režimu zachytávání.</translation>
     </message>
     <message>
-        <location filename="../../src/config/geneneralconf.cpp" line="177"/>
-        <location filename="../../src/config/geneneralconf.cpp" line="181"/>
+        <location filename="../../src/config/geneneralconf.cpp" line="196"/>
+        <source>Show the side panel button</source>
+        <translation>Ukázat tlačítko na postranním panelu</translation>
+    </message>
+    <message>
+        <location filename="../../src/config/geneneralconf.cpp" line="199"/>
+        <source>Show the side panel toggle button in the capture mode.</source>
+        <translation>V režimu zachytávání ukazovat tlačítko na postranním panelu.</translation>
+    </message>
+    <message>
+        <location filename="../../src/config/geneneralconf.cpp" line="210"/>
+        <location filename="../../src/config/geneneralconf.cpp" line="214"/>
         <source>Show desktop notifications</source>
         <translation>Ukázat oznámení</translation>
     </message>
     <message>
-        <location filename="../../src/config/geneneralconf.cpp" line="194"/>
+        <location filename="../../src/config/geneneralconf.cpp" line="227"/>
         <source>Show tray icon</source>
         <translation>Ukázat ikonu v oznamovací oblasti panelu</translation>
     </message>
     <message>
-        <location filename="../../src/config/geneneralconf.cpp" line="198"/>
+        <location filename="../../src/config/geneneralconf.cpp" line="231"/>
         <source>Show the systemtray icon</source>
         <translation>Ukázat ikonu v oznamovací oblasti panelu</translation>
     </message>
     <message>
-        <location filename="../../src/config/geneneralconf.cpp" line="213"/>
+        <location filename="../../src/config/geneneralconf.cpp" line="246"/>
         <source>Configuration File</source>
         <translation>Soubor s nastavením</translation>
     </message>
     <message>
-        <location filename="../../src/config/geneneralconf.cpp" line="218"/>
+        <location filename="../../src/config/geneneralconf.cpp" line="251"/>
         <source>Export</source>
         <translation>Vyvést</translation>
     </message>
     <message>
-        <location filename="../../src/config/geneneralconf.cpp" line="232"/>
+        <location filename="../../src/config/geneneralconf.cpp" line="265"/>
         <source>Reset</source>
         <translation>Nastavit znovu</translation>
     </message>
     <message>
-        <location filename="../../src/config/geneneralconf.cpp" line="243"/>
+        <location filename="../../src/config/geneneralconf.cpp" line="276"/>
         <source>Launch at startup</source>
         <translation>Spustit při spuštění</translation>
     </message>
     <message>
-        <location filename="../../src/config/geneneralconf.cpp" line="247"/>
+        <location filename="../../src/config/geneneralconf.cpp" line="280"/>
         <source>Launch Flameshot</source>
         <translation>Spustit Flameshot</translation>
     </message>
     <message>
-        <location filename="../../src/config/geneneralconf.cpp" line="257"/>
+        <location filename="../../src/config/geneneralconf.cpp" line="290"/>
         <source>Close after capture</source>
-        <translation type="unfinished"></translation>
+        <translation>Zavřít po vytvoření snímku</translation>
     </message>
     <message>
-        <location filename="../../src/config/geneneralconf.cpp" line="261"/>
+        <location filename="../../src/config/geneneralconf.cpp" line="294"/>
         <source>Close after taking a screenshot</source>
-        <translation type="unfinished"></translation>
+        <translation>Zavřít po vytvoření snímku obrazovky</translation>
     </message>
     <message>
-        <location filename="../../src/config/geneneralconf.cpp" line="273"/>
+        <location filename="../../src/config/geneneralconf.cpp" line="306"/>
         <source>Copy URL after upload</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopírovat adresu (URL) po nahrání</translation>
     </message>
     <message>
-        <location filename="../../src/config/geneneralconf.cpp" line="278"/>
+        <location filename="../../src/config/geneneralconf.cpp" line="311"/>
         <source>Copy URL and close window after upload</source>
-        <translation type="unfinished"></translation>
+        <translation>Po nahrání zkopírovat URL a zavřít okno</translation>
+    </message>
+    <message>
+        <location filename="../../src/config/geneneralconf.cpp" line="322"/>
+        <source>Save image after copy</source>
+        <translation>Uložit obrázek po kopírování</translation>
+    </message>
+    <message>
+        <location filename="../../src/config/geneneralconf.cpp" line="323"/>
+        <source>Save image file after copying it</source>
+        <translation>Uložit obrázek se souborem po jeho zkopírování</translation>
+    </message>
+    <message>
+        <location filename="../../src/config/geneneralconf.cpp" line="332"/>
+        <source>Save Path</source>
+        <translation>Cesta pro ukládání</translation>
+    </message>
+    <message>
+        <location filename="../../src/config/geneneralconf.cpp" line="344"/>
+        <source>Change...</source>
+        <translation>Změnit...</translation>
+    </message>
+    <message>
+        <location filename="../../src/config/geneneralconf.cpp" line="363"/>
+        <source>Choose a Folder</source>
+        <translation>Vyberte složku</translation>
+    </message>
+    <message>
+        <location filename="../../src/config/geneneralconf.cpp" line="370"/>
+        <source>Unable to write to directory.</source>
+        <translation>Nelze zapsat do adresáře.</translation>
     </message>
 </context>
 <context>
@@ -489,7 +535,7 @@ Stiskněte mezerník pro otevření postranního panelu.</translation>
     <message>
         <location filename="../../src/widgets/infowindow.cpp" line="62"/>
         <source>SPACEBAR</source>
-        <translation type="unfinished"></translation>
+        <translation>MEZERNÍK</translation>
     </message>
     <message>
         <location filename="../../src/widgets/infowindow.cpp" line="63"/>
@@ -645,37 +691,42 @@ Stiskněte mezerník pro otevření postranního panelu.</translation>
 <context>
     <name>PixelateTool</name>
     <message>
-        <location filename="../../src/tools/pixelate/pixelatetool.cpp" line="39"/>
+        <location filename="../../src/tools/pixelate/pixelatetool.cpp" line="40"/>
         <source>Pixelate</source>
-        <translation type="unfinished"></translation>
+        <translation>Rozčtverečkování</translation>
     </message>
     <message>
-        <location filename="../../src/tools/pixelate/pixelatetool.cpp" line="51"/>
+        <location filename="../../src/tools/pixelate/pixelatetool.cpp" line="52"/>
         <source>Set Pixelate as the paint tool</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastaviť rozčtverečkování jako nástroj pro úpravy</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../../src/utils/screenshotsaver.cpp" line="93"/>
+        <location filename="../../src/utils/screenshotsaver.cpp" line="112"/>
         <source>Save Error</source>
         <translation>Chyba při ukládání</translation>
     </message>
     <message>
-        <location filename="../../src/utils/screenshotsaver.cpp" line="48"/>
-        <location filename="../../src/utils/screenshotsaver.cpp" line="88"/>
+        <location filename="../../src/utils/screenshotsaver.cpp" line="66"/>
+        <location filename="../../src/utils/screenshotsaver.cpp" line="107"/>
         <source>Capture saved as </source>
         <translation>Zachycená obrazovka uložena jako </translation>
     </message>
     <message>
-        <location filename="../../src/utils/screenshotsaver.cpp" line="33"/>
+        <location filename="../../src/utils/screenshotsaver.cpp" line="42"/>
+        <source>Capture saved to clipboard.</source>
+        <translation>Snímek uložen do schránky.</translation>
+    </message>
+    <message>
+        <location filename="../../src/utils/screenshotsaver.cpp" line="47"/>
         <source>Capture saved to clipboard</source>
         <translation>Zachycená obrazovka uložena do schránky</translation>
     </message>
     <message>
-        <location filename="../../src/utils/screenshotsaver.cpp" line="50"/>
-        <location filename="../../src/utils/screenshotsaver.cpp" line="91"/>
+        <location filename="../../src/utils/screenshotsaver.cpp" line="69"/>
+        <location filename="../../src/utils/screenshotsaver.cpp" line="110"/>
         <source>Error trying to save as </source>
         <translation>Chyba při ukládání jako </translation>
     </message>
@@ -691,102 +742,102 @@ Stiskněte mezerník pro otevření postranního panelu.</translation>
     <message>
         <location filename="../../src/main.cpp" line="104"/>
         <source>Powerful yet simple to use screenshot software.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mocný, ale zároveň též jednoduchý program na zachytávání obrazovky.</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="105"/>
         <source>See</source>
-        <translation type="unfinished"></translation>
+        <translation>Podívejte se</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="108"/>
         <source>Capture the entire desktop.</source>
-        <translation type="unfinished"></translation>
+        <translation>Zachytit celou plochu.</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="110"/>
         <source>Open the capture launcher.</source>
-        <translation type="unfinished"></translation>
+        <translation>Otevřít spouštěč zachytávání.</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="112"/>
         <source>Start a manual capture in GUI mode.</source>
-        <translation type="unfinished"></translation>
+        <translation>Spustit ruční zachytávání v režimu uživatelského rozhraní.</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="114"/>
         <source>Configure</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavit</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="116"/>
         <source>Capture a single screen.</source>
-        <translation type="unfinished"></translation>
+        <translation>Zachytit jednu obrazovku.</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="120"/>
         <source>Path where the capture will be saved</source>
-        <translation type="unfinished"></translation>
+        <translation>Cesta, kam bude snímek uložen</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="123"/>
         <source>Save the capture to the clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Uložit snímek do schránky</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="125"/>
         <source>Delay time in milliseconds</source>
-        <translation type="unfinished"></translation>
+        <translation>Čas zpoždění v milisekundách</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="128"/>
         <source>Set the filename pattern</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavit vzor pro pojmenování souborů</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="131"/>
         <source>Enable or disable the trayicon</source>
-        <translation type="unfinished"></translation>
+        <translation>Povolit nebo zakázat ikonu v oznamovací oblasti panelu</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="134"/>
         <source>Enable or disable run at startup</source>
-        <translation type="unfinished"></translation>
+        <translation>Povolit nebo zakázat spuštění při spuštění systému</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="138"/>
         <source>Show the help message in the capture mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukazovat nápovědu v režimu zachytávání</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="141"/>
         <source>Define the main UI color</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavit barvu hlavního uživatelského rozhraní</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="144"/>
         <source>Define the contrast UI color</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavit kontrastní barvu uživatelského rozhraní</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="147"/>
         <source>Print raw PNG capture</source>
-        <translation type="unfinished"></translation>
+        <translation>Zobrazit nezpracovaný PNG snímek</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="150"/>
         <source>Define the screen to capture</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavit monitor, který bude zachytáván</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="151"/>
         <source>default: screen containing the cursor</source>
-        <translation type="unfinished"></translation>
+        <translation>výchozí: obrazovka, na které je ukazovátko myši</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="152"/>
         <source>Screen number</source>
-        <translation type="unfinished"></translation>
+        <translation>Číslo obrazovky</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="161"/>
@@ -797,27 +848,33 @@ Stiskněte mezerník pro otevření postranního panelu.</translation>
 - #RRRRGGGGBBBB
 - Named colors like &apos;blue&apos; or &apos;red&apos;
 You may need to escape the &apos;#&apos; sign as in &apos;\#FFF&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>Neplatná barva, tento přepínač podporuje následující formáty:
+- #RGB (každá ze složek R, G a B je samostatným hexadecimálním číslem)
+- #RRGGBB
+- #RRRGGGBBB
+- #RRRRGGGGBBBB
+- anglické názvy barev jako &apos;blue&apos; nebo &apos;red&apos;
+Možná budete muset napsat před &apos;#&apos; opačné (obrácené) lomítko, tedy &apos;\#FFF&apos;</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="170"/>
         <source>Invalid delay, it must be higher than 0</source>
-        <translation type="unfinished"></translation>
+        <translation>Neplatné zpoždění, musí být vyšší než 0</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="172"/>
         <source>Invalid screen number, it must be non negative</source>
-        <translation type="unfinished"></translation>
+        <translation>Neplatné číslo obrazovky, může být jen kladné</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="179"/>
         <source>Invalid path, it must be a real path in the system</source>
-        <translation type="unfinished"></translation>
+        <translation>Neplatná cesta, musí se jednat o skutečnou cestu v systému</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="189"/>
         <source>Invalid value, it must be defined as &apos;true&apos; or &apos;false&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>Neplatná hodnota, musí být vymezenná jako &apos;pravda&apos; nebo &apos;nepravda&apos;</translation>
     </message>
     <message>
         <location filename="../../src/tools/launcher/openwithprogram.cpp" line="45"/>
@@ -832,37 +889,37 @@ You may need to escape the &apos;#&apos; sign as in &apos;\#FFF&apos;</source>
     <message>
         <location filename="../../src/cli/commandlineparser.cpp" line="64"/>
         <source>Options</source>
-        <translation type="unfinished"></translation>
+        <translation>Volby</translation>
     </message>
     <message>
         <location filename="../../src/cli/commandlineparser.cpp" line="77"/>
         <source>Arguments</source>
-        <translation type="unfinished"></translation>
+        <translation>Argumenty</translation>
     </message>
     <message>
         <location filename="../../src/cli/commandlineparser.cpp" line="350"/>
         <source>arguments</source>
-        <translation type="unfinished"></translation>
+        <translation>argumenty</translation>
     </message>
     <message>
         <location filename="../../src/cli/commandlineparser.cpp" line="351"/>
         <source>Usage</source>
-        <translation type="unfinished"></translation>
+        <translation>Použití</translation>
     </message>
     <message>
         <location filename="../../src/cli/commandlineparser.cpp" line="351"/>
         <source>options</source>
-        <translation type="unfinished"></translation>
+        <translation>volby</translation>
     </message>
     <message>
         <location filename="../../src/cli/commandlineparser.cpp" line="358"/>
         <source>Per default runs Flameshot in the background and   adds a tray icon for configuration.</source>
-        <translation type="unfinished"></translation>
+        <translation>Obvykle se Flameshot spouští na pozadí a přidává do oznamovací oblasti panelu ikonu, kterou je ho možné ovládat.</translation>
     </message>
     <message>
         <location filename="../../src/tools/imgur/imguruploader.cpp" line="88"/>
         <source>URL copied to clipboard.</source>
-        <translation type="unfinished">Adresa (URL) zkopírována do schránky.</translation>
+        <translation>Adresa (URL) zkopírována do schránky.</translation>
     </message>
 </context>
 <context>
@@ -1080,22 +1137,22 @@ You may need to escape the &apos;#&apos; sign as in &apos;\#FFF&apos;</source>
 <context>
     <name>TextConfig</name>
     <message>
-        <location filename="../../src/tools/text/textconfig.cpp" line="55"/>
+        <location filename="../../src/tools/text/textconfig.cpp" line="54"/>
         <source>StrikeOut</source>
         <translation>Přeškrtnutí</translation>
     </message>
     <message>
-        <location filename="../../src/tools/text/textconfig.cpp" line="64"/>
+        <location filename="../../src/tools/text/textconfig.cpp" line="63"/>
         <source>Underline</source>
         <translation>Podtržení</translation>
     </message>
     <message>
-        <location filename="../../src/tools/text/textconfig.cpp" line="73"/>
+        <location filename="../../src/tools/text/textconfig.cpp" line="72"/>
         <source>Bold</source>
         <translation>Tučné</translation>
     </message>
     <message>
-        <location filename="../../src/tools/text/textconfig.cpp" line="82"/>
+        <location filename="../../src/tools/text/textconfig.cpp" line="81"/>
         <source>Italic</source>
         <translation>Kurzíva</translation>
     </message>
@@ -1162,6 +1219,14 @@ You may need to escape the &apos;#&apos; sign as in &apos;\#FFF&apos;</source>
         <location filename="../../src/tools/undo/undotool.cpp" line="52"/>
         <source>Undo the last modification</source>
         <translation>Zrušit poslední změnu</translation>
+    </message>
+</context>
+<context>
+    <name>UtilityPanel</name>
+    <message>
+        <location filename="../../src/widgets/panel/utilitypanel.cpp" line="114"/>
+        <source>Close</source>
+        <translation>Zavřít</translation>
     </message>
 </context>
 <context>
